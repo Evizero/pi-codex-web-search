@@ -20,6 +20,12 @@
     "url": "https://github.com/Evizero/pi-codex-web-search/issues"
   },
   "homepage": "https://github.com/Evizero/pi-codex-web-search#readme",
+  "scripts": {
+    "fmt": "npx --yes prettier --write extensions/*.ts README.md",
+    "lint": "npm run lint:format && npm run lint:types",
+    "lint:format": "npx --yes prettier --check extensions/*.ts README.md",
+    "lint:types": "node ./scripts/typecheck.mjs"
+  },
   "peerDependencies": {
     "@mariozechner/pi-coding-agent": "*"
   },
